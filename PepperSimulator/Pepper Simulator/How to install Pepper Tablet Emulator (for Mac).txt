@@ -1,0 +1,113 @@
+#################################################
+# How to install Pepper Tablet Emulator (for Mac)
+#################################################
+
+
+Install "NAOqi Python SDK"
+
+
+  Download NAOqi Python SDK
+
+Download "NAOqi Python SDK (Python 2.7 SDK 2.4.2 Mac 64)" below URL:
+
+https://community.aldebaran.com/en/resources/software/pepper-sdks-and-documentation-242
+
+(You need to register Aldebara developer program for to get the SDK)
+
+  Open the file
+
+  Save the file to a specific location
+
+ExampleF
+mkdir -p ~/naoqi
+cp -r pynaoqi-python2.7-2.4.2.26-mac64  ~/naoqi
+@  
+
+
+Install nginx
+
+  Install
+
+brew install nginx
+
+(¦ If you didn't get "brew". You have to get and install "homebrew". http://brew.sh/index.html
+
+  Setup for emulator
+
+mkdir -p ~/.local/share/PackageManager/apps
+  
+ln -s ~/.local/share/PackageManager/apps /usr/local/var/www/
+
+
+
+Setup libqi-js
+
+ Get archive of libqi-js  https://github.com/aldebaran/libqi-js/ (Press  [Download ZIP])
+
+ Open the file and go to directry that opened. And do below:
+
+cp -r libs /usr/local/var/www/
+
+  Save "qimessaging-json" to /usr/local/bin
+
+cp qimessaging-json  /usr/local/bin 
+
+
+Install tornado
+
+
+  sudo pip install tornado
+
+(¦ If you didn't get pip. You have to install pip fiest.
+ sudo easy_install pip 
+)
+
+
+Install tornadio2
+
+ Get archive of tornadio2 https://github.com/MrJoes/tornadio2 (Press  [Download ZIP])
+
+ Open the file and go to directry that opened. And do below:
+
+sudo ./setup.py install
+
+
+Setup Pepper Tablet Emulator
+
+
+  Make a directry. And go to the directry. And do below:
+
+git clone https://github.com/tkawata1025/PepperTabletEmulator.git
+
+cd PepperTabletEmulator
+
+cp install_files/PepperTabletEmulator.py /usr/local/bin/
+
+cp install_files/nginx/nginx.conf /usr/local/etc/nginx/
+
+  Open "Choregraphe2.4_te.sh". And edit 3rd low depend on a environment.
+
+-----
+NAOQISDK="$HOME/naoqi/pynaoqi-python2.7-2.4.2.26-mac64" # <--- Change place that you saved "NAOqi Python SDK" 
+-----
+
+
+run nginx 
+
+sudo nginx
+
+
+
+Open ÓChoregraphe2.4_te.sh". in terminal 
+
+open Choregraphe2.4_te.sh
+
+
+
+
+
+If you use "Mac OS X El Capitan"
+
+Mac OS X El Capitan can not use Python SDK. You have to use patch below:
+
+http://qiita.com/tkawata1025/items/31dd49bcef04c85b3047

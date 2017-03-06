@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+body {
+	width: 1707px;
+	height: 1067px;
+}
+
+.buttons {
+	/*width: 98%;*/
+	/*text-align: center;*/
+	height: 100px;
+}
+
+.buttons button {
+	font-size: 2em;
+	width: 50%;
+	margin: 20px auto;
+	/*text-align: center;*/
+}
